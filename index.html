@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squares vs Circles</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            height: 100%;
+            overflow: hidden; /* Prevents scrollbars */
+        }
+        #myCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+
+
+    <script>
+
+        function resizeCanvas()
+        {
+            // Get the canvas element from the page
+            var canvas = document.getElementById("myCanvas");
+
+            /* Resize the canvas to occupy the full page, 
+            by getting the window width and height and setting it to canvas */
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const ctx = canvas.getContext("2d");
+
+            //Draw Canvas Fill mode
+            ctx.fillStyle = 'blue';
+            ctx.fillRect(0,0,canvas.width, canvas.height);
+
+            // Done! Enjoy full page canvas!
+        }
+       
+        window.addEventListener("resize", resizeCanvas());
+    </script>
+
+</head>
+<body onload="resizeCanvas()">
+    <canvas id="myCanvas"  style="border:1px solid #000000;">
+</canvas>
+</body>
+</html>
